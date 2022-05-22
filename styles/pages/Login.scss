@@ -1,0 +1,200 @@
+.login {
+  width: 100%;
+  position: relative;
+
+  &.state-signup {
+    .login__section:nth-child(1) {
+      opacity: 0;
+      left: 50%;
+      z-index: 0;
+    }
+    .login__section:nth-child(3) {
+      opacity: 1;
+      left: calc(100% - 70%);
+    }
+    .login__container {
+      left: 0;
+
+      &-signin {
+        transform: translateX(-500px);
+      }
+    }
+  }
+
+  &.state-signin {
+    .login__section:nth-child(1) {
+      opacity: 1;
+      left: 0;
+    }
+    .login__section:nth-child(3) {
+      opacity: 0;
+      z-index: 0;
+      left: 50%;
+    }
+    .login__container {
+      left: calc(100% - 30%);
+
+      &-signup {
+        transform: translateX(500px);
+      }
+    }
+  }
+
+  &__container {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: 0;
+    background-color: var(--gray-1);
+    z-index: 3;
+    transition: left 500ms ease-in-out, right 500ms ease-in-out;
+    overflow: hidden;
+
+    &__part {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--gray-1);
+      transition: transform 500ms ease-in-out;
+    }
+
+    &__title {
+      color: var(--rose-pearl);
+      font-size: 2.5rem;
+      font-family: "Roboto Slab", serif;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    &__text {
+      color: var(--pure-white);
+      padding: 1rem 0;
+      text-align: center;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.6rem;
+    }
+
+    &__button {
+      color: var(--pure-white);
+      background-color: transparent;
+      border: 2px solid var(--rose-pearl);
+      font-size: 2rem;
+      margin: 1rem;
+      padding: 0.5rem;
+      width: 150px;
+      border-radius: 1rem;
+      font-weight: 500;
+      user-select: none;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__section {
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    left: 50%;
+    // transform: translateX(-50%);
+    top: 0;
+    background-color: var(--gray-0);
+    color: var(--pure-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 500ms ease-in-out, left 500ms ease-in-out;
+
+    > button {
+      color: var(--pure-white);
+      background-color: transparent;
+      border: 2px solid var(--rose-pearl);
+      font-size: 2rem;
+      margin: 1rem;
+      padding: 0.5rem;
+      width: 150px;
+      border-radius: 1rem;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    &__title {
+      font-family: "Roboto Slab", serif;
+      font-size: 3rem;
+      padding: 1.2rem;
+      user-select: none;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+    }
+
+    &__container {
+      width: 100%;
+      max-width: 400px;
+      height: 6rem;
+      background-color: var(--gray-1);
+      margin: 1.2rem;
+      position: relative;
+
+      input {
+        background-color: transparent;
+        width: calc(100% - 6rem);
+        height: 100%;
+        position: absolute;
+        outline: none;
+        border: none;
+        right: 0;
+        font-size: 1.6rem;
+        color: var(--pure-white);
+        font-family: "Roboto", sans-serif;
+      }
+
+      input:focus + label,
+      input:valid + label {
+        > p:nth-child(2) {
+          opacity: 0;
+        }
+        > p:first-of-type {
+          i {
+            color: var(--rose-pearl);
+          }
+        }
+      }
+
+      label {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        font-size: 1.6rem;
+        font-family: "Roboto", sans-serif;
+        user-select: none;
+
+        p:nth-child(2) {
+          opacity: 1;
+          transition: opacity 100ms ease-in-out;
+        }
+
+        p:first-of-type {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 6rem;
+          i {
+            font-size: 2.2rem;
+            transition: color 50ms ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

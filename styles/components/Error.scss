@@ -1,0 +1,29 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  &__number {
+    font-size: 4rem;
+    padding: 1rem;
+    color: var(--pure-white);
+    border-right: var(--rose-pearl) solid 2px;
+    font-family: "Roboto Slab", serif;
+    transition: color 200ms ease-in-out;
+    user-select: none;
+
+    &:hover {
+      color: var(--rose-pearl);
+    }
+  }
+
+  &__text {
+    color: var(--pure-white);
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    padding: 1rem;
+    user-select: none;
+  }
+}

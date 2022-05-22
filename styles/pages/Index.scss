@@ -1,0 +1,48 @@
+.home {
+  &__section {
+    width: 100%;
+    padding: 2rem;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+
+    &__navigation {
+      color: var(--pure-white);
+      width: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      i {
+        font-size: 2rem;
+      }
+    }
+
+    > h2 {
+      font-family: "Roboto Slab", serif;
+      color: var(--pure-white);
+      font-size: 2rem;
+    }
+
+    &__content {
+      height: auto;
+      width: 94%;
+      overflow-y: hidden;
+      overflow-x: auto;
+      display: flex;
+      min-height: min-content;
+      scroll-behavior: smooth;
+      border-radius: 1.3rem;
+
+      > div {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+    }
+  }
+}

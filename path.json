@@ -1,0 +1,5 @@
+{
+  "clientPath": "http://localhost:3000",
+  "serverPath": "http://localhost:3000/api/",
+  "databasePath": "C:/Users/Pierre/Desktop/semicolon-project/data.db"
+}

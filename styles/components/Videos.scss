@@ -1,0 +1,108 @@
+.videos {
+  width: 100%;
+  height: 40rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-family: "Roboto Slab", serif;
+    color: var(--pure-white);
+    font-size: 2rem;
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+  }
+
+  &__container {
+    width: 96%;
+    > div {
+      position: absolute;
+      transform: translateY(-50%) translateX(-50%);
+      height: 28rem;
+      width: 50rem;
+      top: 50%;
+      transition: width 500ms ease-in-out, height 500ms ease-in-out,
+        left 500ms ease-in-out, filter 500ms ease-in-out;
+      overflow: hidden;
+      border-radius: 1.5rem;
+
+      animation: grow 1000ms 0ms ease-in-out;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: transparent;
+        backdrop-filter: blur(3px);
+      }
+
+      &.iframe-position-1 {
+        z-index: 1;
+        height: 24rem;
+        width: 42rem;
+        left: 15%;
+        filter: grayscale(80%);
+      }
+
+      &.iframe-position-2 {
+        z-index: 2;
+        height: 28rem;
+        width: 49rem;
+        left: 30%;
+        filter: grayscale(50%);
+      }
+
+      &.iframe-position-3 {
+        z-index: 3;
+        height: 32rem;
+        width: 57rem;
+        left: 50%;
+        filter: none;
+        border: var(--gray-0) solid 0.2rem;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &.iframe-position-4 {
+        z-index: 2;
+        height: 28rem;
+        width: 49rem;
+        left: (100% - 30%);
+        filter: grayscale(50%);
+      }
+
+      &.iframe-position-5 {
+        z-index: 1;
+        height: 24rem;
+        width: 42rem;
+        left: (100% - 15%);
+        filter: grayscale(80%);
+      }
+
+      > iframe {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border: none;
+      }
+    }
+  }
+}
+
+@keyframes grow {
+  0% {
+    height: 0rem;
+    width: 0rem;
+  }
+}
