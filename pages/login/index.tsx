@@ -10,7 +10,7 @@ const LoginPage = ({
   sessionUuid,
   setSessionUuid,
 }: PageTypes): JSX.Element => {
-  const [page, setPage]: ["signup" | "signin", Function] = useState("signup");
+  const [page, setPage]: [string, Function] = useState("signin");
   const router = useRouter();
   useEffect(() => {
     if (account === true) {
@@ -59,6 +59,10 @@ const LoginPage = ({
       <SignUp
         account={account}
         setAccount={setAccount}
+        sessionUuid={sessionUuid}
+        setSessionUuid={setSessionUuid}
+        page={page}
+        setPage={setPage}
       />
     </section>
   );

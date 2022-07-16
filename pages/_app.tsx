@@ -39,18 +39,12 @@ const App = ({ Component, pageProps, router }: AppProps) => {
           token: sessionUuid,
         },
       }).then(res => {
-        console.log(res.data.data);
-
         if (res.data.error === false) {
           setAccountDetail(res.data.data);
         }
       });
     }
   }, [sessionUuid]);
-
-  useEffect(() => {
-    console.log(accountDetail);
-  }, [accountDetail]);
 
   return (
     <div className="app">

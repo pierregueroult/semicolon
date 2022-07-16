@@ -12,6 +12,7 @@
     "@types/sqlite3": "^3.1.8",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
+    "email-validator": "^2.0.4",
     "framer-motion": "^6.2.9",
     "next": "latest",
     "password-hash": "^1.2.2",

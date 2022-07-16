@@ -40,12 +40,16 @@ const Header = ({ account, accountDetails, setSearchValue }: HeaderTypes) => {
         {account === true ? (
           <>
             <p>{accountDetails.username}</p>
-            <Link href={`/account/${accountDetails.id}`}>
-              <img src={accountDetails.pictureUrl} />
+            <Link href={`/account/`}>
+              {accountDetails.pictureUrl !== null ? (
+                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" />
+              ) : (
+                <img src={accountDetails.pictureUrl} />
+              )}
             </Link>
           </>
         ) : (
-          <Link href="/signup">
+          <Link href="/login">
             <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" />
           </Link>
         )}

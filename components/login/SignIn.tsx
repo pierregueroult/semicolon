@@ -54,6 +54,7 @@ export default function SignIn({
             name="sign-in-mail"
             id="sign-in-mail"
             required
+            autoComplete="email"
           />
           <label htmlFor="sign-in-mail">
             <p>
@@ -68,6 +69,7 @@ export default function SignIn({
             name="sign-in-password"
             id="sign-in-password"
             required
+            autoComplete="current-password"
           />
           <label htmlFor="sign-in-password">
             <p>
@@ -78,7 +80,7 @@ export default function SignIn({
         </div>
       </form>
       <button onClick={pickData}>Se connecter</button>
-      <p className="logion__section__error">{error}</p>
+      <p className="login__section__error">{error}</p>
     </div>
   );
 }

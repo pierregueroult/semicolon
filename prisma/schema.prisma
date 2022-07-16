@@ -26,14 +26,16 @@ model Post {
   shares Int @default(0)
   likes Int @default(0)
   viewCount Int @default(0)
+  visibility String @default("Private")
 }
 
 model Account {
   id Int @id @default(autoincrement())
-  username String
+  username String @unique
   email String @unique
   password String
   Post Post[]
   token String @unique
   bio String?
+  pictureUrl String?
 }
